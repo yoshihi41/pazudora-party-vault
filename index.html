@@ -86,15 +86,49 @@ input:focus,textarea:focus{border-color:#1d9bf0}
 :root[data-theme="dark"] .preview-header,:root[data-theme="dark"] .preview-actions,:root[data-theme="dark"] .x-post-preview{border-color:#2f3336}
 :root[data-theme="dark"] .preview-description,:root[data-theme="dark"] .x-preview-label,:root[data-theme="dark"] .x-preview-fallback{color:#9aa1a6}
 
+
+/* Refined header, compact mobile stats, persistent navigation */
+.brand h1{font-size:20px;letter-spacing:.015em;margin:0}
+.brand p,.eyebrow{display:none!important}
+.hero{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 14px;margin:0;border-bottom:1px solid #eff3f4}
+.hero-description{font-size:13px;line-height:1.6;color:#536471;margin:0}
+.stats-accordion{flex:none}
+.stats-accordion>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:8px 11px;border:1px solid #cfd9de;border-radius:999px;color:#536471;font-size:11px;white-space:nowrap}
+.stats-accordion>summary::-webkit-details-marker{display:none}
+.stats-accordion>summary span{font-size:14px}
+.stats-accordion[open]>summary span{transform:rotate(45deg)}
+.stats-accordion:not([open])>.stats{display:flex}
+.stats-accordion .stats{margin-top:9px}
+@media(min-width:761px){.stats-accordion{display:contents}.stats-accordion>summary{display:none}.stats-accordion:not([open])>.stats{display:flex}.hero{padding:18px 14px}}
+@media(max-width:760px){
+ .app{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+ .top{position:relative;min-height:58px;padding:8px 4px;align-items:center}
+ .brand h1{font-size:17px;white-space:nowrap}
+ .hero{align-items:flex-start;flex-direction:column;gap:9px;padding:12px 4px}
+ .hero-description{font-size:12px}
+ .stats-accordion{width:100%}
+ .stats-accordion>summary{width:100%;justify-content:space-between;padding:9px 12px}
+ .stats-accordion .stats{display:flex;gap:7px;margin-top:8px}
+ .stats-accordion:not([open])>.stats{display:none}
+ .stat{min-width:0;flex:1;padding:8px 10px;border-radius:12px}
+ .stat b{font-size:17px}
+ .stat span{font-size:10px}
+ .mobile-tabs{position:fixed!important;left:0;right:0;bottom:0;z-index:30;display:flex;justify-content:space-around;align-items:center;margin:0;padding:7px 8px calc(7px + env(safe-area-inset-bottom));background:#fffF;border-top:1px solid #eff3f4;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+ .mobile-tabs button{flex:1;min-width:0;padding:5px 2px;background:transparent;border:0;border-radius:10px;color:#536471;font-size:10px;white-space:nowrap}
+ .mobile-tabs button span{font-size:19px;line-height:1.15}
+ .mobile-tabs button.active{color:#1d9bf0}
+ :root[data-theme="dark"] .mobile-tabs{background:#000e;border-color:#2f3336}
+}
+
 </style>
 </head>
 <body>
 <div class="app">
 <header class="top">
- <div class="brand"><div class="logo" aria-label="PAS puzzle icon"><svg width="30" height="30" viewBox="0 0 40 40" aria-hidden="true"><path d="M5 5h11v5a4 4 0 1 0 8 0V5h11v11h-5a4 4 0 1 0 0 8h5v11H23v-5a4 4 0 1 0-8 0v5H5V23h5a4 4 0 1 0 0-8H5z" fill="currentColor"/><circle cx="20" cy="20" r="3" fill="#1d9bf0"/></svg></div><div><h1>PAD ARCHIVE STORAGE</h1><p>PAS · YOUR PUZZLE ARCHIVE</p></div></div>
+ <div class="brand"><div><h1>PAD ARCHIVE STORAGE</h1></div></div>
  <div class="top-actions"><button class="ghost icon-button" id="themeToggle" aria-label="テーマ切り替え" title="テーマ切り替え">☾</button><button class="ghost icon-button" id="backupTop" aria-label="バックアップ" title="バックアップ">▦</button><button class="ghost icon-button" id="settingsBtn" aria-label="設定" title="設定">⚙</button></div>
 </header>
-<section class="hero"><div><div class="eyebrow">YOUR PERSONAL LIBRARY</div><p>ダンジョン別に整理して、必要な編成へすぐアクセス。</p></div><div class="stats"><div class="stat"><b id="folderCount">0</b><span>フォルダ</span></div><div class="stat"><b id="linkCount">0</b><span>編成リンク</span></div><div class="stat"><b id="tagCount">0</b><span>タグ</span></div></div></section>
+<section class="hero"><p class="hero-description">ダンジョン別に整理して、必要な編成へすぐアクセス。</p><details class="stats-accordion"><summary>集計を表示 <span>＋</span></summary><div class="stats"><div class="stat"><b id="folderCount">0</b><span>フォルダ</span></div><div class="stat"><b id="linkCount">0</b><span>編成リンク</span></div><div class="stat"><b id="tagCount">0</b><span>タグ</span></div></div></details></section>
 <div class="toolbar"><div class="search"><input id="searchInput" placeholder="編成名、URL、タグで検索"></div><button class="primary" id="addLink">＋ 編成リンク</button><button id="favoritesFilter" aria-pressed="false">☆ お気に入り</button><button id="addFolder">＋ フォルダ</button><button id="showBackup">保存・復元</button></div>
 <div class="layout">
  <aside class="panel sidebar"><div class="side-head"><strong>フォルダ</strong><button id="sideAddFolder">＋</button></div><div class="tree" id="folderTree"></div><div class="side-foot"><strong style="font-size:11px">タグで絞り込み</strong><div class="tag-cloud" id="tagCloud"></div></div></aside>
