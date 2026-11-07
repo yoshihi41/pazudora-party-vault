@@ -120,12 +120,29 @@ input:focus,textarea:focus{border-color:#1d9bf0}
  :root[data-theme="dark"] .mobile-tabs{background:#000e;border-color:#2f3336}
 }
 
+
+/* Keep the app chrome stationary; scroll only the formation list */
+@media(max-width:760px){
+ html,body{height:100%;overflow:hidden}
+ .app{height:100dvh;min-height:0;display:flex;flex-direction:column;overflow:hidden;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+ .top,.hero,.toolbar{flex:none}
+ .top{position:relative}
+ .hero{flex:none}
+ .toolbar{flex:none}
+ .layout{flex:1;min-height:0;display:flex;overflow:hidden}
+ .content-panel{height:auto;min-height:0;flex:1;overflow:hidden;display:flex;flex-direction:column}
+ .content-head{flex:none}
+ .items{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+ .brand{gap:9px}
+ .logo{width:36px;height:36px;min-width:36px;border-radius:11px;display:grid;place-items:center;font-size:19px;line-height:1}
+}
+
 </style>
 </head>
 <body>
 <div class="app">
 <header class="top">
- <div class="brand"><div><h1>PAD ARCHIVE STORAGE</h1></div></div>
+ <div class="brand"><div class="logo" aria-hidden="true">🧩</div><div><h1>PAD ARCHIVE STORAGE</h1></div></div>
  <div class="top-actions"><button class="ghost icon-button" id="themeToggle" aria-label="テーマ切り替え" title="テーマ切り替え">☾</button><button class="ghost icon-button" id="backupTop" aria-label="バックアップ" title="バックアップ">▦</button><button class="ghost icon-button" id="settingsBtn" aria-label="設定" title="設定">⚙</button></div>
 </header>
 <section class="hero"><p class="hero-description">ダンジョン別に整理して、必要な編成へすぐアクセス。</p><details class="stats-accordion"><summary>集計を表示 <span>＋</span></summary><div class="stats"><div class="stat"><b id="folderCount">0</b><span>フォルダ</span></div><div class="stat"><b id="linkCount">0</b><span>編成リンク</span></div><div class="stat"><b id="tagCount">0</b><span>タグ</span></div></div></details></section>
