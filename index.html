@@ -198,7 +198,8 @@ applyTheme();
 const KEY='pad-party-archive-v1';
 const uid=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4);
 const initial=()=>({version:1,folders:[{id:'root',name:'マイ編成',parentId:null,createdAt:Date.now()}],links:[]});
-let data=load(),selected='root',activeTag='',favoritesOnly=false,sortNewest=true,qrChunks=[],qrIndex=0,scanParts={},scanStream=null,scanRunning=false;\nconst expandedFolders=new Set(['root']);
+let data=load(),selected='root',activeTag='',favoritesOnly=false,sortNewest=true,qrChunks=[],qrIndex=0,scanParts={},scanStream=null,scanRunning=false;
+const expandedFolders=new Set(['root']);
 function load(){try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&Array.isArray(d.folders)&&Array.isArray(d.links))return d}catch(e){}return initial()}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(data));render()}catch(e){toast('保存できません。空き容量を確認してください')}}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
@@ -252,11 +253,12 @@ function renderItems(){
  box.querySelectorAll('[data-newchild]').forEach(e=>e.onclick=ev=>{ev.stopPropagation();folderModal(null,e.dataset.newchild)});
  box.querySelectorAll('[data-editfolder]').forEach(e=>e.onclick=ev=>{ev.stopPropagation();folderModal(e.dataset.editfolder)});
  box.querySelectorAll('[data-drag-link]').forEach(e=>e.addEventListener('dragstart',ev=>{ev.dataTransfer.setData('text/plain',JSON.stringify({type:'link',id:e.dataset.dragLink}));ev.dataTransfer.effectAllowed='move'}));
+ box.querySelectorAll('.folder-card[draggable=true]').forEach(e=>e.addEventListener('dragstart',ev=>{ev.dataTransfer.setData('text/plain',JSON.stringify({type:'folder',id:e.dataset.openFolder}));ev.dataTransfer.effectAllowed='move'}));
  box.querySelectorAll('[data-preview]').forEach(e=>e.onclick=()=>openLinkPreview(e.dataset.preview));
  box.querySelectorAll('[data-favorite]').forEach(e=>e.onclick=ev=>{ev.preventDefault();ev.stopPropagation();const l=data.links.find(x=>x.id===e.dataset.favorite);if(!l)return;l.favorite=!l.favorite;save();toast(l.favorite?'お気に入りに追加しました':'お気に入りから解除しました')});
  box.querySelectorAll('[data-editlink]').forEach(e=>e.onclick=()=>linkModal(e.dataset.editlink));
  box.querySelectorAll('[data-preview-image]').forEach(e=>e.onclick=()=>openLinkPreview(e.dataset.previewImage));
- box.querySelectorAll('[data-tag]').forEach(e=>e.onclick=()=>{activeTag=e.dataset.tag;selected='all';render()});
+ document.querySelectorAll('#tagCloud [data-tag]').forEach(e=>e.onclick=()=>{activeTag=e.dataset.tag;selected='all';render()});
 }
 function moveIntoFolder(payload,targetId){
  if(!payload?.id||!targetId)return;
