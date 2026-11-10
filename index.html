@@ -339,6 +339,88 @@ html,body{
 :root[data-theme="dark"] .sidebar{border-color:#2f3336!important}
 :root[data-theme="dark"] .sidebar .side-foot{border-color:#2f3336}
 
+
+/* PAD-inspired jewel and metal interface */
+:root{--pad-gold:#d7ae58;--pad-gold-soft:#f3d995}
+body{background:radial-gradient(ellipse at 50% -18%,#d9e7f5 0,transparent 52%),#edf1f6;color:#17243a}
+.top{background:linear-gradient(110deg,#142747,#203d67 58%,#172b4b);border:1px solid #38547a;border-bottom:3px solid var(--pad-gold);border-radius:15px 15px 8px 8px;padding:10px 14px;box-shadow:0 5px 16px #14274722}
+.brand h1{color:#fff;letter-spacing:.045em;text-shadow:0 1px 2px #0008}
+.logo{background:radial-gradient(circle at 32% 25%,#fff 0 5%,#9ee5ff 9%,#3688d1 45%,#173b70 72%);border:2px solid #e8c66f;box-shadow:inset 0 0 0 2px #ffffff55,0 2px 8px #07152d88;color:#fff}
+.top-actions{gap:7px}.top-actions .icon-button{width:42px;height:42px;border:1px solid #7186a5;border-radius:12px;background:linear-gradient(#38577f,#1b3457);color:#fff;font-size:19px;box-shadow:inset 0 1px #ffffff55,0 2px 4px #07152d55}
+.toolbar{background:linear-gradient(180deg,#f8fafc,#e7edf5);border:1px solid #c5d0df;border-top:0;border-bottom:2px solid #c5a354;border-radius:0 0 13px 13px}
+.toolbar button,.side-head button,.content-head button{border:1px solid #aebdd0;background:linear-gradient(#fff,#e6edf5);color:#203653;border-radius:10px;box-shadow:inset 0 1px #fff,0 1px 2px #152b4918}
+.toolbar button.primary,.modal button.primary{background:linear-gradient(180deg,#e8c875,#b98a37);border:1px solid #936b29;color:#30220d;text-shadow:0 1px #fff8;box-shadow:inset 0 1px #fff9,0 2px 4px #72501d33}
+.search input{border:1px solid #aebdd0;background:#fff;box-shadow:inset 0 1px 3px #1a355012}.search:before{color:#48617f}
+.workspace-panel{background:linear-gradient(145deg,#fff,#f4f7fb);border:1px solid #bdc9d9!important;border-radius:14px;box-shadow:0 4px 15px #18345b12;overflow:hidden}
+.sidebar{background:linear-gradient(180deg,#e9eff7,#f7f9fc);border-bottom:2px solid #c6a65d!important}
+.side-head,.content-head{background:linear-gradient(180deg,#f9fbfd,#e5ebf3);border-bottom:1px solid #c5d0df}
+.side-head strong,.content-head strong{color:#1b3457;text-shadow:0 1px #fff}
+.tree-row{color:#344d6d;border-radius:8px}.tree-row:hover,.tree-row.active{background:linear-gradient(90deg,#d9e9fa,#eef5fc);color:#17385f;box-shadow:inset 3px 0 #c69b43}
+.tree-expander{color:#56718f}.tree-row .tree-actions button{background:transparent;box-shadow:none;border:0;color:#607894}
+.content-panel{background:#fff}.content-head{border-top:1px solid #c5d0df}.crumb{color:#647994}
+.folder-grid{background:#f7f9fc;border-bottom:1px solid #d6deea}
+.folder-card{background:linear-gradient(145deg,#fff,#edf3fa);border:1px solid #b9c8dc;border-radius:11px;box-shadow:inset 0 1px #fff,0 2px 5px #233d5d12}
+.folder-card:hover{background:#e8f1fb;border-color:#c5a354}
+.item{border-bottom:1px solid #e0e6ef}.item:hover{background:#f4f8fc}
+.link-icon{background:radial-gradient(circle at 30% 25%,#fff 0 7%,#9ce4fa 12%,#388cc8 52%,#183e70 78%);color:#fff;border:2px solid #d4b15e;box-shadow:inset 0 0 0 2px #ffffff55,0 2px 4px #18345b22}
+.item-title-link{color:#203653}.item-title-link:hover{color:#1675b7}
+.item-tags .tag{background:linear-gradient(#f5e9c8,#e8d39c);border:1px solid #c6a65d;color:#60491d;border-radius:7px}
+.favorite-toggle.is-favorite{color:#d79c25}
+.item-actions button{background:linear-gradient(#fff,#e8eef5);border:1px solid #b7c5d7;color:#294666;border-radius:9px}
+.empty{color:#61748d}
+.modal-back{background:#0b1730b8;backdrop-filter:blur(3px)}
+.modal{background:linear-gradient(145deg,#fff,#edf2f8);border:2px solid #c5a354;box-shadow:0 18px 60px #07152d66;color:#1a2e4b}.modal h3{color:#203c63}
+.notice{background:#eaf0f7;border:1px solid #d1dbe8;color:#526983}
+.toast{background:#172d4d;border:1px solid #d8b55f;color:#fff;box-shadow:0 4px 16px #07152d55}
+.settings-modal{width:min(540px,100%);padding:0;overflow:hidden}
+.settings-screen{padding:22px}
+.settings-heading{display:flex;align-items:center;gap:13px;padding-bottom:17px;border-bottom:1px solid #d4deea}
+.settings-heading h3{margin:0 0 5px;font-size:19px}.settings-heading p{margin:0;color:#687c95;font-size:11px}
+.settings-emblem{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(#38577f,#1b3457);border:1px solid #c7a456;color:#fff;font-size:22px}
+.settings-section{margin-top:18px;padding:15px;border:1px solid #c8d3e1;border-radius:12px;background:#f8fafc}
+.settings-section>strong{font-size:13px;color:#203c63}.settings-section p{font-size:12px;line-height:1.75;color:#5b708a;margin:8px 0 0}
+.settings-theme-button{width:100%;min-height:46px;margin-top:13px;border-radius:10px}
+.settings-info .settings-version{display:block;margin-top:13px;color:#8998aa;font-size:10px;letter-spacing:.06em}
+.settings-screen .modal-actions{margin-top:18px}.settings-screen .modal-actions button{min-width:100px}
+:root[data-theme="dark"] body{background:radial-gradient(ellipse at 50% -15%,#1d3a60 0,transparent 50%),#080e1b;color:#e8edf5}
+:root[data-theme="dark"] .top{background:linear-gradient(110deg,#091426,#172d4e 58%,#0d1d35);border-color:#5e7395;border-bottom-color:#d4b15e}
+:root[data-theme="dark"] .toolbar{background:linear-gradient(#1a2d49,#101d32);border-color:#405777}
+:root[data-theme="dark"] .toolbar button,:root[data-theme="dark"] .side-head button,:root[data-theme="dark"] .content-head button,:root[data-theme="dark"] .item-actions button{background:linear-gradient(#2b4262,#182b47);border-color:#536b8c;color:#f0f4fa}
+:root[data-theme="dark"] .workspace-panel{background:#101a2b;border-color:#465b79!important}
+:root[data-theme="dark"] .sidebar,:root[data-theme="dark"] .side-head,:root[data-theme="dark"] .content-head{background:linear-gradient(#1a2e4b,#111e33);border-color:#405777}
+:root[data-theme="dark"] .side-head strong,:root[data-theme="dark"] .content-head strong,:root[data-theme="dark"] .item-title-link{color:#edf3fb}
+:root[data-theme="dark"] .tree-row{color:#b8c8dd}
+:root[data-theme="dark"] .tree-row:hover,:root[data-theme="dark"] .tree-row.active{background:linear-gradient(90deg,#203c61,#172b48);color:#fff;box-shadow:inset 3px 0 #d3ad59}
+:root[data-theme="dark"] .content-panel,:root[data-theme="dark"] .items{background:#101a2b}
+:root[data-theme="dark"] .folder-grid{background:#0d1728;border-color:#354a67}
+:root[data-theme="dark"] .folder-card{background:linear-gradient(145deg,#1d304d,#13223a);border-color:#435b7b;color:#e8edf5}
+:root[data-theme="dark"] .folder-card:hover{background:#243c5e;border-color:#c5a354}
+:root[data-theme="dark"] .item{border-color:#2b3e59}
+:root[data-theme="dark"] .item:hover{background:#172740}
+:root[data-theme="dark"] .item-tags .tag{background:linear-gradient(#584a2c,#3e351f);border-color:#927741;color:#f2d99a}
+:root[data-theme="dark"] .modal{background:linear-gradient(145deg,#1c304e,#101c30);border-color:#c5a354;color:#e8edf5}
+:root[data-theme="dark"] .modal h3,:root[data-theme="dark"] .settings-section>strong{color:#f2d99a}
+:root[data-theme="dark"] .settings-heading{border-color:#3b506d}
+:root[data-theme="dark"] .settings-heading p,:root[data-theme="dark"] .settings-section p{color:#a8bad0}
+:root[data-theme="dark"] .settings-section{background:#14243b;border-color:#405777}
+:root[data-theme="dark"] .settings-info .settings-version{color:#8194ad}
+:root[data-theme="dark"] .notice{background:#14243b;border-color:#405777;color:#b2c3d8}
+@media(max-width:760px){
+ .app{padding:8px 9px 24px!important}
+ .top{display:flex;gap:6px;min-width:0;padding:7px 7px}
+ .brand{flex:1 1 auto;min-width:0;gap:7px}
+ .brand h1{font-size:clamp(11px,3.8vw,15px);letter-spacing:0;overflow:hidden;text-overflow:clip}
+ .logo{width:34px;height:34px;min-width:34px;font-size:17px}
+ .top-actions{flex:0 0 auto;gap:3px}
+ .top-actions .icon-button{width:35px;height:35px;min-width:35px;padding:0;font-size:17px;border-radius:10px}
+ .settings-modal{width:100%;max-width:540px;max-height:calc(100dvh - 20px - env(safe-area-inset-top) - env(safe-area-inset-bottom));overflow:auto;border-radius:16px;padding:0}
+ .settings-screen{padding:18px 15px calc(15px + env(safe-area-inset-bottom))}
+ .settings-section{padding:13px}
+ .settings-screen .modal-actions button{width:100%;min-height:44px}
+}
+@media(max-width:360px){.brand h1{font-size:11px}.top-actions .icon-button{width:33px;height:33px;min-width:33px}}
+:root[data-theme="dark"] .item-url{color:#9aaec7}
+
 </style>
 </head>
 <body>
@@ -347,13 +429,13 @@ html,body{
  <div class="brand"><div class="logo" aria-hidden="true">🧩</div><div><h1>PAD ARCHIVE STORAGE</h1></div></div>
  <div class="top-actions"><button class="ghost icon-button" id="themeToggle" aria-label="テーマ切り替え" title="テーマ切り替え">☾</button><button class="ghost icon-button" id="backupTop" aria-label="バックアップ" title="バックアップ">▦</button><button class="ghost icon-button" id="settingsBtn" aria-label="設定" title="設定">⚙</button></div>
 </header>
-<div class="toolbar"><div class="search"><input id="searchInput" placeholder="編成名、URL、タグで検索"></div><button class="primary" id="addLink">＋ 編成リンク</button><button id="favoritesFilter" aria-pressed="false">☆ お気に入り</button><button id="addFolder">＋ フォルダ</button><button id="showBackup">保存・復元</button></div>
+<div class="toolbar"><div class="search"><input id="searchInput" placeholder="編成名、URL、フォルダ名、タグで検索"></div><button class="primary" id="addLink">＋ 編成リンク</button><button id="favoritesFilter" aria-pressed="false">☆ お気に入り</button><button id="addFolder">＋ フォルダ</button><button id="showBackup">保存・復元</button></div>
 <div class="layout">
  <section class="panel workspace-panel">
   <aside class="sidebar">
    <div class="side-head"><strong>フォルダ一覧</strong><button id="sideAddFolder" aria-label="フォルダを追加">＋ フォルダ</button></div>
    <div class="tree" id="folderTree"></div>
-   <div class="side-foot"><strong style="font-size:11px">タグで絞り込み</strong><div class="tag-cloud" id="tagCloud"></div></div>
+   
   </aside>
   <main class="panel content-panel">
    <div class="content-head"><div><strong id="currentTitle">すべての編成</strong><div class="crumb" id="breadcrumb">ライブラリ全体</div></div><button class="ghost" id="sortBtn">更新順 ↓</button></div>
@@ -374,7 +456,7 @@ applyTheme();
 const KEY='pad-party-archive-v1';
 const uid=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4);
 const initial=()=>({version:1,folders:[{id:'root',name:'マイ編成',parentId:null,createdAt:Date.now()}],links:[]});
-let data=load(),selected='root',activeTag='',favoritesOnly=false,sortNewest=true,qrChunks=[],qrIndex=0,scanParts={},scanStream=null,scanRunning=false;
+let data=load(),selected='root',favoritesOnly=false,sortNewest=true,qrChunks=[],qrIndex=0,scanParts={},scanStream=null,scanRunning=false;
 const expandedFolders=new Set(['root']);
 function load(){try{const d=JSON.parse(localStorage.getItem(KEY));if(d&&Array.isArray(d.folders)&&Array.isArray(d.links))return d}catch(e){}return initial()}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(data));render()}catch(e){toast('保存できません。空き容量を確認してください')}}
@@ -382,9 +464,8 @@ function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&l
 function toast(s){const t=document.getElementById('toast');t.textContent=s;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
 function folder(id){return data.folders.find(f=>f.id===id)}
 function pathOf(id){let a=[],f=folder(id),n=0;while(f&&n++<30){a.unshift(f.name);f=folder(f.parentId)}return a}
-function allTags(){return [...new Set(data.links.flatMap(x=>x.tags||[]))].sort((a,b)=>a.localeCompare(b,'ja'))}
 function descendants(id){const out=[id],walk=p=>data.folders.filter(f=>f.parentId===p).forEach(f=>{out.push(f.id);walk(f.id)});walk(id);return out}
-function render(){renderTree();renderTags();renderItems()}
+function render(){renderTree();renderItems()}
 function renderTree(){
  const el=document.getElementById('folderTree');
  const make=(pid,depth)=>data.folders.filter(f=>f.parentId===pid).sort((a,b)=>a.name.localeCompare(b.name,'ja')).map(f=>{
@@ -395,7 +476,7 @@ function renderTree(){
  }).join('');
  el.innerHTML=`<div class="tree-row ${selected==='all'?'active':''}" data-folder="all"><span class="tree-expander is-leaf">·</span><span class="tree-folder-icon">⌂</span><span class="folder-name">すべての編成</span><span class="count">${data.links.length}</span></div>`+make(null,0);
  el.querySelectorAll('[data-expand]').forEach(b=>b.onclick=e=>{e.stopPropagation();const id=b.dataset.expand;expandedFolders.has(id)?expandedFolders.delete(id):expandedFolders.add(id);renderTree()});
- el.querySelectorAll('.tree-row[data-folder]').forEach(row=>row.addEventListener('click',e=>{if(e.target.closest('.tree-actions')||e.target.closest('[data-expand]'))return;selected=row.dataset.folder;favoritesOnly=false;activeTag='';render()}));
+ el.querySelectorAll('.tree-row[data-folder]').forEach(row=>row.addEventListener('click',e=>{if(e.target.closest('.tree-actions')||e.target.closest('[data-expand]'))return;selected=row.dataset.folder;favoritesOnly=false;render()}));
  el.querySelectorAll('[data-newchild]').forEach(b=>b.onclick=e=>{e.stopPropagation();folderModal(null,b.dataset.newchild)});
  el.querySelectorAll('[data-editfolder]').forEach(b=>b.onclick=e=>{e.stopPropagation();folderModal(b.dataset.editfolder)});
  el.querySelectorAll('[data-drop-folder]').forEach(row=>{
@@ -405,26 +486,25 @@ function renderTree(){
   row.addEventListener('dragstart',e=>{e.dataTransfer.setData('text/plain',JSON.stringify({type:'folder',id:row.dataset.dropFolder}));e.dataTransfer.effectAllowed='move'});
  });
 }
-function renderTags(){const tags=allTags();document.getElementById('tagCloud').innerHTML=tags.length?tags.map(t=>`<span class="tag clickable" data-tag="${esc(t)}">${esc(t)}</span>`).join(''):'<span style="font-size:10px;color:var(--muted)">リンクにタグを追加すると表示されます</span>'}
 function renderItems(){
  const q=document.getElementById('searchInput').value.trim().toLowerCase();
- const current=folder(selected),isVirtual=selected==='all'||favoritesOnly||!!activeTag;
+ const current=folder(selected),isVirtual=selected==='all'||favoritesOnly;
  const childFolders=isVirtual?data.folders.filter(f=>f.parentId===null):data.folders.filter(f=>f.parentId===selected);
  let list=data.links.filter(l=>{
-  const inFolder=favoritesOnly?!!l.favorite:activeTag?true:selected==='all'?true:l.folderId===selected;
-  const tagOk=!activeTag||(l.tags||[]).includes(activeTag),folderText=pathOf(l.folderId).join(' ');
+  const inFolder=favoritesOnly?!!l.favorite:selected==='all'?true:l.folderId===selected;
+  const folderText=pathOf(l.folderId).join(' ');
   const textOk=!q||[l.title,l.url,folderText,...(l.tags||[])].join(' ').toLowerCase().includes(q);
-  return inFolder&&tagOk&&textOk;
+  return inFolder&&textOk;
  });
- if(favoritesOnly||activeTag||q){}else if(selected==='all')list=list.filter(l=>!l.folderId);
+ if(!favoritesOnly&&!q&&selected==='all')list=list.filter(l=>!l.folderId);
  list.sort((a,b)=>sortNewest?(b.updatedAt||0)-(a.updatedAt||0):a.title.localeCompare(b.title,'ja'));
- document.getElementById('currentTitle').textContent=favoritesOnly?'お気に入り':activeTag?'タグ：'+activeTag:selected==='all'?'すべての編成':current?.name||'フォルダ';
- document.getElementById('breadcrumb').textContent=favoritesOnly?'すべてのフォルダを横断して表示':activeTag?'タグで絞り込み':selected==='all'?'ライブラリ全体':pathOf(selected).join(' / ');
+ document.getElementById('currentTitle').textContent=favoritesOnly?'お気に入り':selected==='all'?'すべての編成':current?.name||'フォルダ';
+ document.getElementById('breadcrumb').textContent=favoritesOnly?'すべてのフォルダを横断して表示':selected==='all'?'ライブラリ全体':pathOf(selected).join(' / ');
  const favBtn=document.getElementById('favoritesFilter');if(favBtn){favBtn.textContent=favoritesOnly?'★ お気に入り表示中':'☆ お気に入り';favBtn.setAttribute('aria-pressed',String(favoritesOnly))}
  const box=document.getElementById('items');
- const folderCards=(favoritesOnly||activeTag||q)?[]:childFolders.map(f=>`<article class="folder-card" data-open-folder="${f.id}" draggable="true"><span class="folder-card-icon">📁</span><span class="folder-card-name">${esc(f.name)}</span><span class="folder-card-count">${data.links.filter(l=>l.folderId===f.id).length}件</span><span class="folder-card-actions"><button data-newchild="${f.id}" title="子フォルダを作成">＋</button><button data-editfolder="${f.id}" title="フォルダを編集">⋯</button></span></article>`).join('');
+ const folderCards=(favoritesOnly||q)?[]:childFolders.map(f=>`<article class="folder-card" data-open-folder="${f.id}" draggable="true"><span class="folder-card-icon">📁</span><span class="folder-card-name">${esc(f.name)}</span><span class="folder-card-count">${data.links.filter(l=>l.folderId===f.id).length}件</span><span class="folder-card-actions"><button data-newchild="${f.id}" title="子フォルダを作成">＋</button><button data-editfolder="${f.id}" title="フォルダを編集">⋯</button></span></article>`).join('');
  const linkCards=list.map(l=>`<article class="item" draggable="true" data-drag-link="${l.id}"><div class="link-icon">🔗</div><div class="item-main"><div class="item-heading"><button class="item-title-link" data-preview="${l.id}">${esc(l.title)}</button><button class="favorite-toggle ${l.favorite?'is-favorite':''}" data-favorite="${l.id}" aria-label="${l.favorite?'お気に入り解除':'お気に入りに追加'}" aria-pressed="${!!l.favorite}">${l.favorite?'★':'☆'}</button></div><div class="item-url">${esc(l.url)}</div><div class="item-tags">${(l.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div><img class="item-preview" data-preview-image="${l.id}" src="${l.imageData||""}" alt="編成画像プレビュー" style="${l.imageData?"":"display:none"}"></div><div class="item-actions"><button data-editlink="${l.id}">編集</button></div></article>`).join('');
- box.innerHTML=(folderCards?'<div class="folder-grid">'+folderCards+'</div>':'')+(linkCards||(!folderCards?'<div class="empty"><div class="symbol">'+(q||activeTag?'⌕':'▤')+'</div><b>'+(q||activeTag?'一致する編成がありません':'このフォルダは空です')+'</b><p>'+(q||activeTag?'検索条件やタグを変更してください。':'「＋ フォルダ」で子フォルダを作成するか、「＋ 編成リンク」で編成を追加できます。')+'<br>データはこの端末のブラウザ内に保存されます。</p></div>':''));
+ box.innerHTML=(folderCards?'<div class="folder-grid">'+folderCards+'</div>':'')+(linkCards||(!folderCards?'<div class="empty"><div class="symbol">'+(q?'⌕':'▤')+'</div><b>'+(q?'一致する編成がありません':'このフォルダは空です')+'</b><p>'+(q?'検索条件を変更してください。':'「＋ フォルダ」で子フォルダを作成するか、「＋ 編成リンク」で編成を追加できます。')+'<br>データはこの端末のブラウザ内に保存されます。</p></div>':''));
  box.querySelectorAll('[data-open-folder]').forEach(e=>e.onclick=ev=>{if(ev.target.closest('.folder-card-actions'))return;selected=e.dataset.openFolder;expandedFolders.add(selected);render()});
  box.querySelectorAll('[data-newchild]').forEach(e=>e.onclick=ev=>{ev.stopPropagation();folderModal(null,e.dataset.newchild)});
  box.querySelectorAll('[data-editfolder]').forEach(e=>e.onclick=ev=>{ev.stopPropagation();folderModal(e.dataset.editfolder)});
@@ -434,7 +514,6 @@ function renderItems(){
  box.querySelectorAll('[data-favorite]').forEach(e=>e.onclick=ev=>{ev.preventDefault();ev.stopPropagation();const l=data.links.find(x=>x.id===e.dataset.favorite);if(!l)return;l.favorite=!l.favorite;save();toast(l.favorite?'お気に入りに追加しました':'お気に入りから解除しました')});
  box.querySelectorAll('[data-editlink]').forEach(e=>e.onclick=()=>linkModal(e.dataset.editlink));
  box.querySelectorAll('[data-preview-image]').forEach(e=>e.onclick=()=>openLinkPreview(e.dataset.previewImage));
- document.querySelectorAll('#tagCloud [data-tag]').forEach(e=>e.onclick=()=>{activeTag=e.dataset.tag;selected='all';render()});
 }
 function moveIntoFolder(payload,targetId){
  if(!payload?.id||!targetId)return;
@@ -452,13 +531,13 @@ function folderModal(id=null,parent='root'){const f=id?folder(id):null;showModal
 function linkModal(id=null){const l=id?data.links.find(x=>x.id===id):null;let attachedImage=l?.imageData||"";showModal(`<h3>${l?'編成リンクを編集':'編成リンクを追加'}</h3><div class="field"><label>編成名</label><input id="linkTitle" maxlength="100" value="${esc(l?.title||'')}" placeholder="例：裏千手・周回編成"></div><div class="field"><label>編成URL</label><input id="linkUrl" type="url" value="${esc(l?.url||'')}" placeholder="https://..."></div><div class="field"><label>保存フォルダ</label><select id="linkFolder">${folderOptions(l?.folderId|| (selected==='all'?'root':selected))}</select></div><div class="field"><label>タグ</label><input id="linkTags" value="${esc((l?.tags||[]).join(', '))}" placeholder="周回, 無効貫通, 超重力"><small>カンマ区切りで複数登録できます。</small></div><div class="field"><label>編成画像（任意）</label><input id="linkImage" type="file" accept="image/*"><small>画像は縮小して端末内に保存します。</small><div id="imageStatus" style="font-size:11px;color:var(--muted);margin-top:7px">${attachedImage?"画像を添付済みです":""}</div><button type="button" id="removeImage" class="ghost" ${attachedImage?"":"disabled"}>画像を削除</button></div><div class="modal-actions">${l?'<button class="danger" id="deleteLink">削除</button>':''}<button id="cancel">キャンセル</button><button class="primary" id="saveLink">保存</button></div>`);document.getElementById('cancel').onclick=closeModal;document.getElementById('linkImage').onchange=async e=>{const file=e.target.files?.[0];if(!file)return;try{attachedImage=await compressImage(file);document.getElementById('imageStatus').textContent='画像を添付しました';document.getElementById('removeImage').disabled=false}catch(err){toast('画像を読み込めませんでした')}};document.getElementById('removeImage').onclick=()=>{attachedImage='';document.getElementById('linkImage').value='';document.getElementById('imageStatus').textContent='画像は添付されていません';document.getElementById('removeImage').disabled=true};document.getElementById('saveLink').onclick=()=>{const title=document.getElementById('linkTitle').value.trim(),url=document.getElementById('linkUrl').value.trim();if(!title||!url)return toast('編成名とURLを入力してください');try{const u=new URL(url);if(!['http:','https:'].includes(u.protocol))throw 0}catch(e){return toast('正しいURLを入力してください')}const tags=[...new Set(document.getElementById('linkTags').value.split(/[,、]/).map(x=>x.trim()).filter(Boolean))];if(l)Object.assign(l,{title,url,tags,folderId:document.getElementById('linkFolder').value,imageData:attachedImage||'',updatedAt:Date.now()});else data.links.push({id:uid(),title,url,tags,folderId:document.getElementById('linkFolder').value,imageData:attachedImage||'',createdAt:Date.now(),updatedAt:Date.now()});closeModal();save();toast('編成リンクを保存しました')};if(l)document.getElementById('deleteLink').onclick=()=>{if(confirm('この編成リンクを削除しますか？')){data.links=data.links.filter(x=>x.id!==l.id);closeModal();save()}}}
 function backupModal(){showModal(`<h3>保存・復元</h3><p class="notice">編成データはこの端末のブラウザ内に保存されます。機種変更やブラウザのデータ削除に備えて、定期的にバックアップしてください。</p><div style="display:grid;gap:9px;margin-top:16px"><button class="primary" id="exportJson">↓ JSONファイルを書き出す</button><button id="exportQr">▦ QRコードでバックアップ</button><label class="file-label">↑ JSONファイルから復元<input id="importJson" type="file" accept="application/json,.json"></label><button id="importQr">▣ QRコードをカメラで読み取る</button></div><p class="notice" style="margin-top:14px">QRバックアップはデータ量に応じて複数枚に分割します。読み取りはカメラ対応ブラウザ（HTTPS）で利用できます。</p><div class="modal-actions"><button id="closeBackup">閉じる</button></div>`);document.getElementById('closeBackup').onclick=closeModal;document.getElementById('exportJson').onclick=downloadJson;document.getElementById('exportQr').onclick=qrModal;document.getElementById('importJson').onchange=importJson;document.getElementById('importQr').onclick=scanModal}
 function downloadJson(){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`pas-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();URL.revokeObjectURL(a.href);toast('バックアップをダウンロードしました')}
-function importJson(e){const file=e.target.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!Array.isArray(d.folders)||!Array.isArray(d.links))throw 0;if(confirm(`フォルダ${d.folders.length}件、リンク${d.links.length}件のデータで現在のデータを置き換えますか？`)){data={version:1,folders:d.folders,links:d.links};if(!folder('root'))data.folders.unshift({id:'root',name:'マイ編成',parentId:null});selected='all';activeTag='';save();closeModal();toast('復元しました')}}catch(x){toast('バックアップファイルを読み込めません')}};r.readAsText(file)}
+function importJson(e){const file=e.target.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);if(!Array.isArray(d.folders)||!Array.isArray(d.links))throw 0;if(confirm(`フォルダ${d.folders.length}件、リンク${d.links.length}件のデータで現在のデータを置き換えますか？`)){data={version:1,folders:d.folders,links:d.links};if(!folder('root'))data.folders.unshift({id:'root',name:'マイ編成',parentId:null});selected='all';save();closeModal();toast('復元しました')}}catch(x){toast('バックアップファイルを読み込めません')}};r.readAsText(file)}
 function splitQrData(raw,maxBytes=420){const chunks=[];let part='',bytes=0;for(const char of raw){const n=new TextEncoder().encode(char).length;if(bytes+n>maxBytes&&part){chunks.push(part);part='';bytes=0}part+=char;bytes+=n}if(part)chunks.push(part);return chunks}
 function qrModal(){const raw=JSON.stringify(data),parts=splitQrData(raw),batch=uid();qrChunks=parts.map((v,i)=>JSON.stringify({app:'PAS',v:1,batch,i,total:parts.length,data:v}));qrIndex=0;showModal(`<h3>QRコードバックアップ</h3><p class="notice">QRコードをすべて保存してください（${parts.length}枚）。1枚ずつ画像保存できます。読み取りやすいように分割しています。</p><div class="qr-area"><div id="qrCanvas"></div></div><div class="qr-nav"><button id="qrPrev">←</button><span id="qrPage"></span><button id="qrNext">→</button></div><div class="modal-actions"><button id="qrSave">このQRを画像保存</button><button id="qrClose" type="button">閉じる</button></div>`);drawQr();document.getElementById('qrPrev').onclick=()=>{qrIndex=Math.max(0,qrIndex-1);drawQr()};document.getElementById('qrNext').onclick=()=>{qrIndex=Math.min(qrChunks.length-1,qrIndex+1);drawQr()};document.getElementById('qrSave').onclick=saveQr;document.getElementById('qrClose').onclick=closeModal}
 function drawQr(){const el=document.getElementById('qrCanvas');el.innerHTML='';if(!window.QRCode){el.textContent='QRライブラリを読み込めません';return}new QRCode(el,{text:qrChunks[qrIndex],width:230,height:230,correctLevel:QRCode.CorrectLevel.L});document.getElementById('qrPage').textContent=`${qrIndex+1} / ${qrChunks.length}`;document.getElementById('qrPrev').disabled=qrIndex===0;document.getElementById('qrNext').disabled=qrIndex===qrChunks.length-1}
 function saveQr(){const holder=document.getElementById('qrCanvas'),c=holder?.querySelector('canvas'),img=holder?.querySelector('img');const url=c?c.toDataURL('image/png'):img?.src;if(!url)return toast('QR画像を作成できませんでした');const a=document.createElement('a');a.href=url;a.download=`pas-qr-${qrIndex+1}.png`;document.body.appendChild(a);a.click();a.remove()}
-async function scanModal(){if(!('BarcodeDetector'in window)&&typeof window.jsQR!=='function'){toast('QR読み取り機能を読み込めません。JSON復元を利用してください');return}showModal(`<h3>QRコードから復元</h3><p class="notice">バックアップQRを順番にカメラへ見せてください。すべて読み取ると復元できます。</p><video id="camera" autoplay playsinline muted style="width:100%;border-radius:12px;background:#000;margin-top:12px"></video><canvas id="scanCanvas" class="hidden"></canvas><p id="scanStatus" style="font-size:12px;color:var(--muted)">カメラを起動しています...</p><div class="modal-actions"><button id="scanStop" type="button">閉じる</button></div>`);document.getElementById('scanStop').onclick=closeModal;try{scanStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});if(!document.getElementById('camera')){scanStream.getTracks().forEach(t=>t.stop());scanStream=null;return}const video=document.getElementById('camera'),canvas=document.getElementById('scanCanvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});video.srcObject=scanStream;await video.play();const detector=('BarcodeDetector'in window)?new BarcodeDetector({formats:['qr_code']}):null;scanRunning=true;let lastValue='';const loop=async()=>{if(!scanRunning||!document.getElementById('camera'))return;if(video.readyState>=2){let value='';try{if(detector){const codes=await detector.detect(video);if(codes.length)value=codes[0].rawValue}else{canvas.width=video.videoWidth;canvas.height=video.videoHeight;ctx.drawImage(video,0,0,canvas.width,canvas.height);const result=window.jsQR(ctx.getImageData(0,0,canvas.width,canvas.height).data,canvas.width,canvas.height,{inversionAttempts:'attemptBoth'});if(result)value=result.data}}catch(e){}if(value&&value!==lastValue){lastValue=value;try{const o=JSON.parse(value);if(o.app==='PAS'&&Number.isInteger(o.i)&&Number.isInteger(o.total)&&o.total>0&&o.total<=10000&&typeof o.data==='string'){scanParts[o.batch]??={total:o.total,parts:{}};scanParts[o.batch].parts[o.i]=o.data;const got=Object.keys(scanParts[o.batch].parts).length;const status=document.getElementById('scanStatus');if(status)status.textContent=`読み取り済み ${got} / ${o.total} 枚`;if(got===o.total){const raw=Array.from({length:o.total},(_,i)=>scanParts[o.batch].parts[i]).join(''),d=JSON.parse(raw);if(!Array.isArray(d.folders)||!Array.isArray(d.links))throw new Error('invalid backup');if(confirm(`フォルダ${d.folders.length}件、リンク${d.links.length}件を復元しますか？`)){data=d;if(!folder('root'))data.folders.unshift({id:'root',name:'マイ編成',parentId:null});selected='all';activeTag='';save();closeModal();toast('QRから復元しました')}return}}}catch(e){}}else if(!value){lastValue=''}}if(scanRunning)requestAnimationFrame(loop)};requestAnimationFrame(loop)}catch(e){const status=document.getElementById('scanStatus');if(status)status.textContent='カメラを起動できません。HTTPS接続とカメラ権限を確認してください。'}} 
-document.getElementById('favoritesFilter').onclick=()=>{favoritesOnly=!favoritesOnly;selected='all';activeTag='';render()};document.getElementById('addFolder').onclick=()=>folderModal(null,selected==='all'?'root':selected);document.getElementById('sideAddFolder').onclick=()=>folderModal(null,selected==='all'?'root':selected);document.getElementById('addLink').onclick=()=>linkModal();document.getElementById('showBackup').onclick=backupModal;document.getElementById('backupTop').onclick=backupModal;document.getElementById('settingsBtn').onclick=()=>{showModal(`<h3>PAS 設定</h3><p class="notice">PAD ARCHIVE STORAGE v1.1<br>編成データとテーマ設定は、このブラウザ内に保存されます。テーマの初期設定はライトモードです。<br>サーバーへの編成データ送信は行いません。ブラウザのデータ消去や端末故障に備えてバックアップしてください。</p><div class="field"><label>表示テーマ</label><button id="modalTheme" class="primary">${theme==='dark'?'ライトモードにする':'ダークモードにする'}</button></div><div class="modal-actions"><button id="closeInfo">閉じる</button></div>`);document.getElementById('modalTheme').onclick=()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem(THEME_KEY,theme);applyTheme();document.getElementById('modalTheme').textContent=theme==='dark'?'ライトモードにする':'ダークモードにする'};document.getElementById('closeInfo').onclick=closeModal};document.getElementById('themeToggle').onclick=()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem(THEME_KEY,theme);applyTheme()};document.getElementById('searchInput').oninput=renderItems;document.getElementById('sortBtn').onclick=()=>{sortNewest=!sortNewest;document.getElementById('sortBtn').textContent=sortNewest?'更新順 ↓':'名前順 ↑';renderItems()};document.getElementById('modalBack').onclick=e=>{if(e.target.id==='modalBack')closeModal()};render();
+async function scanModal(){if(!('BarcodeDetector'in window)&&typeof window.jsQR!=='function'){toast('QR読み取り機能を読み込めません。JSON復元を利用してください');return}showModal(`<h3>QRコードから復元</h3><p class="notice">バックアップQRを順番にカメラへ見せてください。すべて読み取ると復元できます。</p><video id="camera" autoplay playsinline muted style="width:100%;border-radius:12px;background:#000;margin-top:12px"></video><canvas id="scanCanvas" class="hidden"></canvas><p id="scanStatus" style="font-size:12px;color:var(--muted)">カメラを起動しています...</p><div class="modal-actions"><button id="scanStop" type="button">閉じる</button></div>`);document.getElementById('scanStop').onclick=closeModal;try{scanStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});if(!document.getElementById('camera')){scanStream.getTracks().forEach(t=>t.stop());scanStream=null;return}const video=document.getElementById('camera'),canvas=document.getElementById('scanCanvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});video.srcObject=scanStream;await video.play();const detector=('BarcodeDetector'in window)?new BarcodeDetector({formats:['qr_code']}):null;scanRunning=true;let lastValue='';const loop=async()=>{if(!scanRunning||!document.getElementById('camera'))return;if(video.readyState>=2){let value='';try{if(detector){const codes=await detector.detect(video);if(codes.length)value=codes[0].rawValue}else{canvas.width=video.videoWidth;canvas.height=video.videoHeight;ctx.drawImage(video,0,0,canvas.width,canvas.height);const result=window.jsQR(ctx.getImageData(0,0,canvas.width,canvas.height).data,canvas.width,canvas.height,{inversionAttempts:'attemptBoth'});if(result)value=result.data}}catch(e){}if(value&&value!==lastValue){lastValue=value;try{const o=JSON.parse(value);if(o.app==='PAS'&&Number.isInteger(o.i)&&Number.isInteger(o.total)&&o.total>0&&o.total<=10000&&typeof o.data==='string'){scanParts[o.batch]??={total:o.total,parts:{}};scanParts[o.batch].parts[o.i]=o.data;const got=Object.keys(scanParts[o.batch].parts).length;const status=document.getElementById('scanStatus');if(status)status.textContent=`読み取り済み ${got} / ${o.total} 枚`;if(got===o.total){const raw=Array.from({length:o.total},(_,i)=>scanParts[o.batch].parts[i]).join(''),d=JSON.parse(raw);if(!Array.isArray(d.folders)||!Array.isArray(d.links))throw new Error('invalid backup');if(confirm(`フォルダ${d.folders.length}件、リンク${d.links.length}件を復元しますか？`)){data=d;if(!folder('root'))data.folders.unshift({id:'root',name:'マイ編成',parentId:null});selected='all';save();closeModal();toast('QRから復元しました')}return}}}catch(e){}}else if(!value){lastValue=''}}if(scanRunning)requestAnimationFrame(loop)};requestAnimationFrame(loop)}catch(e){const status=document.getElementById('scanStatus');if(status)status.textContent='カメラを起動できません。HTTPS接続とカメラ権限を確認してください。'}} 
+document.getElementById('favoritesFilter').onclick=()=>{favoritesOnly=!favoritesOnly;selected='all';render()};document.getElementById('addFolder').onclick=()=>folderModal(null,selected==='all'?'root':selected);document.getElementById('sideAddFolder').onclick=()=>folderModal(null,selected==='all'?'root':selected);document.getElementById('addLink').onclick=()=>linkModal();document.getElementById('showBackup').onclick=backupModal;document.getElementById('backupTop').onclick=backupModal;document.getElementById('settingsBtn').onclick=()=>{showModal(`<div class="settings-screen"><div class="settings-heading"><span class="settings-emblem">⚙</span><div><h3>PAS 設定</h3><p>アプリの表示と保存について</p></div></div><div class="settings-section"><strong>表示テーマ</strong><p>画面の明るさを切り替えます。</p><button id="modalTheme" class="primary settings-theme-button">${theme==='dark'?'☀ ライトモードにする':'☾ ダークモードにする'}</button></div><div class="settings-section settings-info"><strong>データの保存先</strong><p>編成データとテーマ設定は、このブラウザ内に保存されます。サーバーへの編成データ送信は行いません。</p><p>ブラウザのデータ消去や端末故障に備えて、定期的にバックアップしてください。</p><span class="settings-version">PAD ARCHIVE STORAGE · v1.1</span></div><div class="modal-actions"><button id="closeInfo" class="primary">閉じる</button></div></div>`);document.getElementById('modal').classList.add('settings-modal');document.getElementById('modalTheme').onclick=()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem(THEME_KEY,theme);applyTheme();document.getElementById('modalTheme').textContent=theme==='dark'?'☀ ライトモードにする':'☾ ダークモードにする'};document.getElementById('closeInfo').onclick=closeModal};document.getElementById('themeToggle').onclick=()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem(THEME_KEY,theme);applyTheme()};document.getElementById('searchInput').oninput=renderItems;document.getElementById('sortBtn').onclick=()=>{sortNewest=!sortNewest;document.getElementById('sortBtn').textContent=sortNewest?'更新順 ↓':'名前順 ↑';renderItems()};document.getElementById('modalBack').onclick=e=>{if(e.target.id==='modalBack')closeModal()};render();
 })();
 </script>
 </body></html>
