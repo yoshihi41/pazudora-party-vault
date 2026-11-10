@@ -250,6 +250,95 @@ input:focus,textarea:focus{border-color:#1d9bf0}
 :root[data-theme="dark"] .sidebar,
 :root[data-theme="dark"] .content-panel{border-color:#2f3336}
 
+
+/* Unified folder-first workspace; natural page scrolling */
+html,body{
+ height:auto!important;
+ min-height:100%!important;
+ overflow-x:hidden!important;
+ overflow-y:auto!important;
+}
+.app{
+ height:auto!important;
+ min-height:100svh;
+ display:block!important;
+ overflow:visible!important;
+ padding-bottom:24px!important;
+}
+.top,.hero,.toolbar{position:static!important}
+.layout{
+ display:block!important;
+ min-height:0!important;
+ overflow:visible!important;
+ border:0!important;
+}
+.workspace-panel{
+ display:block;
+ width:100%;
+ overflow:visible;
+ border:1px solid #eff3f4;
+ border-radius:16px;
+ background:#fff;
+}
+.sidebar{
+ display:block!important;
+ width:100%;
+ max-height:none!important;
+ overflow:visible!important;
+ border:0!important;
+ border-bottom:1px solid #eff3f4!important;
+}
+.sidebar .tree{
+ max-height:none!important;
+ overflow:visible!important;
+ padding:8px 10px;
+}
+.sidebar .side-foot{
+ display:block!important;
+ border-top:1px solid #eff3f4;
+}
+.content-panel{
+ display:flex!important;
+ flex-direction:column;
+ width:100%;
+ min-width:0;
+ min-height:0!important;
+ height:auto!important;
+ max-height:none!important;
+ overflow:visible!important;
+ border:0!important;
+}
+.content-panel .content-head{position:static;flex:none}
+.content-panel .items{
+ flex:none;
+ min-height:0;
+ overflow:visible!important;
+ padding-bottom:18px;
+}
+.tree-row{min-height:40px}
+.tree-row .tree-actions{opacity:1}
+.folder-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.mobile-tabs{display:none!important}
+@media(max-width:760px){
+ .app{padding:8px 10px 24px!important}
+ .top{margin-bottom:8px;padding:8px 2px}
+ .brand h1{font-size:16px}
+ .toolbar{padding:10px 0;gap:7px}
+ .toolbar .search{flex-basis:100%;order:-1}
+ .toolbar button{font-size:11px;padding:9px 11px}
+ .workspace-panel{border-radius:13px}
+ .side-head{padding:10px 12px}
+ .sidebar .tree{padding:5px 7px}
+ .tree-row{min-height:42px}
+ .content-head{padding:12px}
+ .items{padding:0 5px 16px!important}
+ .folder-grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:8px 4px}
+ .folder-card{padding:10px 8px}
+}
+:root[data-theme="dark"] .workspace-panel{background:#000;border-color:#2f3336}
+:root[data-theme="dark"] .sidebar{border-color:#2f3336!important}
+:root[data-theme="dark"] .sidebar .side-foot{border-color:#2f3336}
+
 </style>
 </head>
 <body>
@@ -258,14 +347,21 @@ input:focus,textarea:focus{border-color:#1d9bf0}
  <div class="brand"><div class="logo" aria-hidden="true">🧩</div><div><h1>PAD ARCHIVE STORAGE</h1></div></div>
  <div class="top-actions"><button class="ghost icon-button" id="themeToggle" aria-label="テーマ切り替え" title="テーマ切り替え">☾</button><button class="ghost icon-button" id="backupTop" aria-label="バックアップ" title="バックアップ">▦</button><button class="ghost icon-button" id="settingsBtn" aria-label="設定" title="設定">⚙</button></div>
 </header>
-<section class="hero"><p class="hero-description">ダンジョン別に整理して、必要な編成へすぐアクセス。</p><details class="stats-accordion"><summary>集計を表示 <span>＋</span></summary><div class="stats"><div class="stat"><b id="folderCount">0</b><span>フォルダ</span></div><div class="stat"><b id="linkCount">0</b><span>編成リンク</span></div><div class="stat"><b id="tagCount">0</b><span>タグ</span></div></div></details></section>
 <div class="toolbar"><div class="search"><input id="searchInput" placeholder="編成名、URL、タグで検索"></div><button class="primary" id="addLink">＋ 編成リンク</button><button id="favoritesFilter" aria-pressed="false">☆ お気に入り</button><button id="addFolder">＋ フォルダ</button><button id="showBackup">保存・復元</button></div>
 <div class="layout">
- <aside class="panel sidebar"><div class="side-head"><strong>フォルダ</strong><button id="sideAddFolder">＋</button></div><div class="tree" id="folderTree"></div><div class="side-foot"><strong style="font-size:11px">タグで絞り込み</strong><div class="tag-cloud" id="tagCloud"></div></div></aside>
- <main class="panel content-panel"><div class="content-head"><div><strong id="currentTitle">すべての編成</strong><div class="crumb" id="breadcrumb">ライブラリ全体</div></div><button class="ghost" id="sortBtn">更新順 ↓</button></div><div class="items" id="items"></div></main>
+ <section class="panel workspace-panel">
+  <aside class="sidebar">
+   <div class="side-head"><strong>フォルダ一覧</strong><button id="sideAddFolder" aria-label="フォルダを追加">＋ フォルダ</button></div>
+   <div class="tree" id="folderTree"></div>
+   <div class="side-foot"><strong style="font-size:11px">タグで絞り込み</strong><div class="tag-cloud" id="tagCloud"></div></div>
+  </aside>
+  <main class="panel content-panel">
+   <div class="content-head"><div><strong id="currentTitle">すべての編成</strong><div class="crumb" id="breadcrumb">ライブラリ全体</div></div><button class="ghost" id="sortBtn">更新順 ↓</button></div>
+   <div class="items" id="items"></div>
+  </main>
+ </section>
 </div>
 </div>
-<nav class="mobile-tabs"><button class="active" data-tab="all"><span>⌂</span>すべて</button><button data-tab="folders"><span>▣</span>フォルダ</button><button data-tab="addLink"><span>＋</span>編成追加</button><button data-tab="tags"><span>◇</span>タグ</button><button data-tab="backup"><span>↗</span>保存</button></nav>
 <div class="modal-back" id="modalBack"><section class="modal" id="modal"></section></div><div class="toast" id="toast"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
@@ -288,7 +384,7 @@ function folder(id){return data.folders.find(f=>f.id===id)}
 function pathOf(id){let a=[],f=folder(id),n=0;while(f&&n++<30){a.unshift(f.name);f=folder(f.parentId)}return a}
 function allTags(){return [...new Set(data.links.flatMap(x=>x.tags||[]))].sort((a,b)=>a.localeCompare(b,'ja'))}
 function descendants(id){const out=[id],walk=p=>data.folders.filter(f=>f.parentId===p).forEach(f=>{out.push(f.id);walk(f.id)});walk(id);return out}
-function render(){document.getElementById('folderCount').textContent=data.folders.length-1;document.getElementById('linkCount').textContent=data.links.length;document.getElementById('tagCount').textContent=allTags().length;renderTree();renderTags();renderItems()}
+function render(){renderTree();renderTags();renderItems()}
 function renderTree(){
  const el=document.getElementById('folderTree');
  const make=(pid,depth)=>data.folders.filter(f=>f.parentId===pid).sort((a,b)=>a.name.localeCompare(b.name,'ja')).map(f=>{
@@ -362,7 +458,7 @@ function qrModal(){const raw=JSON.stringify(data),parts=splitQrData(raw),batch=u
 function drawQr(){const el=document.getElementById('qrCanvas');el.innerHTML='';if(!window.QRCode){el.textContent='QRライブラリを読み込めません';return}new QRCode(el,{text:qrChunks[qrIndex],width:230,height:230,correctLevel:QRCode.CorrectLevel.L});document.getElementById('qrPage').textContent=`${qrIndex+1} / ${qrChunks.length}`;document.getElementById('qrPrev').disabled=qrIndex===0;document.getElementById('qrNext').disabled=qrIndex===qrChunks.length-1}
 function saveQr(){const holder=document.getElementById('qrCanvas'),c=holder?.querySelector('canvas'),img=holder?.querySelector('img');const url=c?c.toDataURL('image/png'):img?.src;if(!url)return toast('QR画像を作成できませんでした');const a=document.createElement('a');a.href=url;a.download=`pas-qr-${qrIndex+1}.png`;document.body.appendChild(a);a.click();a.remove()}
 async function scanModal(){if(!('BarcodeDetector'in window)&&typeof window.jsQR!=='function'){toast('QR読み取り機能を読み込めません。JSON復元を利用してください');return}showModal(`<h3>QRコードから復元</h3><p class="notice">バックアップQRを順番にカメラへ見せてください。すべて読み取ると復元できます。</p><video id="camera" autoplay playsinline muted style="width:100%;border-radius:12px;background:#000;margin-top:12px"></video><canvas id="scanCanvas" class="hidden"></canvas><p id="scanStatus" style="font-size:12px;color:var(--muted)">カメラを起動しています...</p><div class="modal-actions"><button id="scanStop" type="button">閉じる</button></div>`);document.getElementById('scanStop').onclick=closeModal;try{scanStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});if(!document.getElementById('camera')){scanStream.getTracks().forEach(t=>t.stop());scanStream=null;return}const video=document.getElementById('camera'),canvas=document.getElementById('scanCanvas'),ctx=canvas.getContext('2d',{willReadFrequently:true});video.srcObject=scanStream;await video.play();const detector=('BarcodeDetector'in window)?new BarcodeDetector({formats:['qr_code']}):null;scanRunning=true;let lastValue='';const loop=async()=>{if(!scanRunning||!document.getElementById('camera'))return;if(video.readyState>=2){let value='';try{if(detector){const codes=await detector.detect(video);if(codes.length)value=codes[0].rawValue}else{canvas.width=video.videoWidth;canvas.height=video.videoHeight;ctx.drawImage(video,0,0,canvas.width,canvas.height);const result=window.jsQR(ctx.getImageData(0,0,canvas.width,canvas.height).data,canvas.width,canvas.height,{inversionAttempts:'attemptBoth'});if(result)value=result.data}}catch(e){}if(value&&value!==lastValue){lastValue=value;try{const o=JSON.parse(value);if(o.app==='PAS'&&Number.isInteger(o.i)&&Number.isInteger(o.total)&&o.total>0&&o.total<=10000&&typeof o.data==='string'){scanParts[o.batch]??={total:o.total,parts:{}};scanParts[o.batch].parts[o.i]=o.data;const got=Object.keys(scanParts[o.batch].parts).length;const status=document.getElementById('scanStatus');if(status)status.textContent=`読み取り済み ${got} / ${o.total} 枚`;if(got===o.total){const raw=Array.from({length:o.total},(_,i)=>scanParts[o.batch].parts[i]).join(''),d=JSON.parse(raw);if(!Array.isArray(d.folders)||!Array.isArray(d.links))throw new Error('invalid backup');if(confirm(`フォルダ${d.folders.length}件、リンク${d.links.length}件を復元しますか？`)){data=d;if(!folder('root'))data.folders.unshift({id:'root',name:'マイ編成',parentId:null});selected='all';activeTag='';save();closeModal();toast('QRから復元しました')}return}}}catch(e){}}else if(!value){lastValue=''}}if(scanRunning)requestAnimationFrame(loop)};requestAnimationFrame(loop)}catch(e){const status=document.getElementById('scanStatus');if(status)status.textContent='カメラを起動できません。HTTPS接続とカメラ権限を確認してください。'}} 
-document.getElementById('favoritesFilter').onclick=()=>{favoritesOnly=!favoritesOnly;selected='all';activeTag='';render()};document.getElementById('addFolder').onclick=()=>folderModal(null,selected==='all'?'root':selected);document.getElementById('sideAddFolder').onclick=()=>folderModal(null,selected==='all'?'root':selected);document.getElementById('addLink').onclick=()=>linkModal();document.getElementById('showBackup').onclick=backupModal;document.getElementById('backupTop').onclick=backupModal;document.getElementById('settingsBtn').onclick=()=>{showModal(`<h3>PAS 設定</h3><p class="notice">PAD ARCHIVE STORAGE v1.1<br>編成データとテーマ設定は、このブラウザ内に保存されます。テーマの初期設定はライトモードです。<br>サーバーへの編成データ送信は行いません。ブラウザのデータ消去や端末故障に備えてバックアップしてください。</p><div class="field"><label>表示テーマ</label><button id="modalTheme" class="primary">${theme==='dark'?'ライトモードにする':'ダークモードにする'}</button></div><div class="modal-actions"><button id="closeInfo">閉じる</button></div>`);document.getElementById('modalTheme').onclick=()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem(THEME_KEY,theme);applyTheme();document.getElementById('modalTheme').textContent=theme==='dark'?'ライトモードにする':'ダークモードにする'};document.getElementById('closeInfo').onclick=closeModal};document.getElementById('themeToggle').onclick=()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem(THEME_KEY,theme);applyTheme()};document.getElementById('searchInput').oninput=renderItems;document.getElementById('sortBtn').onclick=()=>{sortNewest=!sortNewest;document.getElementById('sortBtn').textContent=sortNewest?'更新順 ↓':'名前順 ↑';renderItems()};document.getElementById('modalBack').onclick=e=>{if(e.target.id==='modalBack')closeModal()};document.querySelectorAll('.mobile-tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.mobile-tabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');if(b.dataset.tab==='all'){selected='all';activeTag='';render()}if(b.dataset.tab==='folders'){document.querySelector('.sidebar')?.scrollIntoView({behavior:'smooth',block:'start'});document.querySelector('.sidebar')?.classList.toggle('mobile-tree-open')}if(b.dataset.tab==='tags'){showModal(`<h3>タグ一覧</h3><div class="tag-cloud">${allTags().map(t=>`<span class="tag clickable" data-picktag="${esc(t)}">${esc(t)}</span>`).join('')||'タグはまだありません'}</div><div class="modal-actions"><button id="tagClose">閉じる</button></div>`);document.getElementById('tagClose').onclick=closeModal;document.querySelectorAll('[data-picktag]').forEach(x=>x.onclick=()=>{activeTag=x.dataset.picktag;selected='all';closeModal();renderItems()})}if(b.dataset.tab==='addLink')linkModal();if(b.dataset.tab==='backup')backupModal()});render();
+document.getElementById('favoritesFilter').onclick=()=>{favoritesOnly=!favoritesOnly;selected='all';activeTag='';render()};document.getElementById('addFolder').onclick=()=>folderModal(null,selected==='all'?'root':selected);document.getElementById('sideAddFolder').onclick=()=>folderModal(null,selected==='all'?'root':selected);document.getElementById('addLink').onclick=()=>linkModal();document.getElementById('showBackup').onclick=backupModal;document.getElementById('backupTop').onclick=backupModal;document.getElementById('settingsBtn').onclick=()=>{showModal(`<h3>PAS 設定</h3><p class="notice">PAD ARCHIVE STORAGE v1.1<br>編成データとテーマ設定は、このブラウザ内に保存されます。テーマの初期設定はライトモードです。<br>サーバーへの編成データ送信は行いません。ブラウザのデータ消去や端末故障に備えてバックアップしてください。</p><div class="field"><label>表示テーマ</label><button id="modalTheme" class="primary">${theme==='dark'?'ライトモードにする':'ダークモードにする'}</button></div><div class="modal-actions"><button id="closeInfo">閉じる</button></div>`);document.getElementById('modalTheme').onclick=()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem(THEME_KEY,theme);applyTheme();document.getElementById('modalTheme').textContent=theme==='dark'?'ライトモードにする':'ダークモードにする'};document.getElementById('closeInfo').onclick=closeModal};document.getElementById('themeToggle').onclick=()=>{theme=theme==='dark'?'light':'dark';localStorage.setItem(THEME_KEY,theme);applyTheme()};document.getElementById('searchInput').oninput=renderItems;document.getElementById('sortBtn').onclick=()=>{sortNewest=!sortNewest;document.getElementById('sortBtn').textContent=sortNewest?'更新順 ↓':'名前順 ↑';renderItems()};document.getElementById('modalBack').onclick=e=>{if(e.target.id==='modalBack')closeModal()};render();
 })();
 </script>
 </body></html>
